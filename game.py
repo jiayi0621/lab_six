@@ -217,6 +217,11 @@ def print_menu(exits, room_items, inv_items):
     for direction in exits:
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
+    for i2 in room_items:
+        print("TAKE " + i2["id"].upper() + " to take " + i2["name"] + ".")
+    for i3 in inv_items:
+        print("DROP " + i3["id"].upper() + " to take " + i3["name"] + ".")
+
 
     #
     # COMPLETE ME!
@@ -306,7 +311,7 @@ def execute_command(command):
 def menu(exits, room_items, inv_items):
     """This function, given a dictionary of possible exits from a room, and a list
     of items found in the room and carried by the player, prints the menu of
-    actions using print_menu() function. It then prompts the player to type an
+    actions using print_menu() function. It then promptsr the player to type an
     action. The players's input is normalised using the normalise_input()
     function before being returned.
 
